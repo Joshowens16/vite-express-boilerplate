@@ -12,9 +12,8 @@ router.use(express.json());
 // Set up routes
 router.use("/api", apiRouter);
 
-// Pass back everything else / front-end
 router.use("/dist", express.static(path.join(__dirname, "../dist")));
-router.use("/static", express.static(path.join(__dirname, "../static")));
+router.use("/public", express.static(path.join(__dirname, "../public")));
 router.get("/", (req: Request, res: Response) =>
   res.sendFile(path.join(__dirname, "../../index.html"))
 );
